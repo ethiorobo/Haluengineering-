@@ -19,7 +19,6 @@
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       font-family: 'Inter', sans-serif;
       background: #ffffff;
@@ -28,7 +27,6 @@
       overflow-x: hidden;
       width: 100%;
     }
-
     /* ========= MOVABLE HVAC ANIMATED BACKGROUND ========= */
     .moving-bg {
       position: fixed;
@@ -40,13 +38,11 @@
       overflow: hidden;
       background: linear-gradient(145deg, #0b1120 0%, #0a1a2a 100%);
     }
-
     .bg-canvas {
       position: absolute;
       width: 100%;
       height: 100%;
     }
-
     .hvac-float-icon {
       position: absolute;
       font-size: 3rem;
@@ -55,7 +51,6 @@
       animation: driftIcon 18s infinite alternate ease-in-out;
       z-index: -1;
     }
-
     @keyframes driftIcon {
       0% {
         transform: translate(0, 0) rotate(0deg);
@@ -64,14 +59,12 @@
         transform: translate(60px, 40px) rotate(12deg);
       }
     }
-
     .icon-1 { top: 12%; left: 5%; animation-duration: 22s; animation-delay: -2s; }
     .icon-2 { bottom: 20%; right: 8%; animation-duration: 19s; animation-delay: -5s; }
     .icon-3 { top: 40%; left: 80%; animation-duration: 25s; animation-delay: -1s; }
     .icon-4 { bottom: 35%; left: 15%; animation-duration: 21s; animation-delay: -8s; }
     .icon-5 { top: 70%; right: 20%; animation-duration: 28s; animation-delay: -3s; }
     .icon-6 { top: 15%; right: 35%; animation-duration: 24s; animation-delay: -6s; }
-
     .airflow-streak {
       position: absolute;
       width: 200px;
@@ -82,7 +75,6 @@
       opacity: 0.4;
       border-radius: 50%;
     }
-
     @keyframes streakMove {
       0% {
         transform: translateX(-30%) translateY(0) rotate(20deg);
@@ -99,12 +91,10 @@
         opacity: 0;
       }
     }
-
     .streak-1 { top: 25%; left: -10%; animation-delay: 0s; width: 260px; }
     .streak-2 { top: 55%; left: -5%; animation-delay: 4s; width: 320px; transform: rotate(15deg); }
     .streak-3 { top: 80%; left: 0%; animation-delay: 7s; width: 400px; transform: rotate(8deg); }
     .streak-4 { top: 15%; left: 10%; animation-delay: 2s; width: 280px; transform: rotate(35deg); }
-
     /* ===== ENGINEERING MP4 VIDEO SECTION ===== */
     .engineering-video-section {
       position: relative;
@@ -176,25 +166,21 @@
       display: none;
       pointer-events: none;
     }
-    
+
     header, main, footer, .floating-social {
       position: relative;
       z-index: 10;
     }
-
     .hero {
       background: rgba(255, 245, 245, 0.92);
       backdrop-filter: blur(2px);
     }
-
     section:not(.slider-section) {
       background: rgba(255, 255, 255, 0.95);
     }
-
     .slider-section {
       background: rgba(254, 250, 245, 0.95);
     }
-
     body.dark .hero {
       background: rgba(17, 24, 39, 0.92);
     }
@@ -218,7 +204,6 @@
       border-bottom-color: #f87171;
       background: #03060c;
     }
-
     .loader {
       position: fixed;
       top: 0;
@@ -739,6 +724,22 @@
       background: #fff5f5;
       transform: translateY(-3px);
     }
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .cta-section .btn-brochure {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+      box-shadow: none;
+    }
+    .cta-section .btn-brochure:hover {
+      background: white;
+      color: #dc2626;
+    }
     .floating-social {
       position: fixed;
       bottom: 25px;
@@ -765,7 +766,7 @@
     .floating-wa { background: #25D366; color: white; }
     .floating-telegram { background: #0088cc; color: white; }
     .floating-fb { background: #1877f2; color: white; }
-    
+
     /* Footer with HVAC.png image */
     footer {
       background: #f8fafc;
@@ -795,7 +796,6 @@
       padding: 1.8rem;
       font-size: 0.9rem;
     }
-
     /* Projects Gallery Link Button */
     .projects-gallery-link {
       text-align: center;
@@ -829,7 +829,6 @@
       background: #f87171;
       color: #111;
     }
-
     /* ===== PROJECTS IN PROGRESS - ATTRACTIVE CARD STYLE ===== */
     .progress-section {
       background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%);
@@ -942,7 +941,45 @@
       margin: 0;
       color: #dc2626;
     }
-
+    /* ===== BROCHURE DOWNLOAD BUTTON ===== */
+    .btn-brochure {
+      background: transparent;
+      border: 2px solid #dc2626;
+      color: #dc2626;
+      box-shadow: none;
+    }
+    .btn-brochure:hover {
+      background: #dc2626;
+      color: white;
+    }
+    body.dark .btn-brochure {
+      border-color: #f87171;
+      color: #f87171;
+    }
+    body.dark .btn-brochure:hover {
+      background: #f87171;
+      color: #111;
+    }
+    .brochure-toast {
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%) translateY(120px);
+      background: #111827;
+      color: white;
+      padding: 12px 22px;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      border-left: 4px solid #dc2626;
+      transition: transform 0.4s ease;
+      z-index: 2000;
+      white-space: nowrap;
+    }
+    .brochure-toast.show {
+      transform: translateX(-50%) translateY(0);
+    }
     /* ===== ENHANCED MOBILE VIEW COMPATIBILITY - FIX FIT TO SIZE ===== */
     @media (max-width: 992px) {
       .container { padding: 0 20px; }
@@ -993,6 +1030,7 @@
       .progress-card { padding: 1rem 0.8rem; }
       .progress-card h4 { font-size: 0.95rem; }
       .progress-card i { font-size: 1.6rem; }
+      .hero .btn, .hero .btn-brochure { width: 100%; justify-content: center; }
     }
     @media (max-width: 550px) {
       .container { padding: 0 14px; }
@@ -1034,7 +1072,6 @@
   </style>
 </head>
 <body>
-
 <div class="moving-bg">
   <canvas class="bg-canvas" id="hvacCanvas"></canvas>
   <div class="hvac-float-icon icon-1"><i class="fas fa-wind"></i></div>
@@ -1048,7 +1085,6 @@
   <div class="airflow-streak streak-3"></div>
   <div class="airflow-streak streak-4"></div>
 </div>
-
 <div class="loader" id="loader"><div class="loader-spinner"></div></div>
 <header>
   <div class="container header-flex">
@@ -1074,16 +1110,17 @@
   <div class="hero">
     <div class="container">
       <div data-aos="fade-up" data-aos-duration="800">
-        <h1>HVAC & <span>Mechanical Engineering</span><br>Future-Ready Climate Control</h1>
+        <h1>HVAC & <span>Mechanical Engineering</span>
+Future-Ready Climate Control</h1>
         <p>Air Conditioning | Cold Rooms | Heat Pumps | Ventilation | Duct Works | Smart HVAC solutions for tomorrow's infrastructure.</p>
         <div style="display: flex; gap: 12px; flex-wrap: wrap;">
           <a href="services.html" class="btn">Explore Solutions <i class="fas fa-arrow-right"></i></a>
           <a href="contact.html" class="btn btn-outline">Request Quote</a>
+          <a href="#" class="btn btn-brochure js-brochure-download"><i class="fas fa-file-pdf"></i> Download Brochure</a>
         </div>
       </div>
     </div>
   </div>
-
   <!-- ENGINEERING MP4 VIDEO SECTION -->
   <div class="engineering-video-section">
     <div class="engineering-video-wrapper">
@@ -1095,25 +1132,22 @@
       <div id="videoFallbackMsg" class="video-fallback-message"><i class="fas fa-exclamation-triangle"></i> Loading ENGINEERING.mp4...</div>
     </div>
   </div>
-
   <section><div class="container"><h2 class="section-title" data-aos="fade-up">Engineering Excellence</h2><div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;"><div class="card" style="padding: 1rem;"><i class="fas fa-microchip"></i><h4>Smart Controls</h4></div><div class="card" style="padding: 1rem;"><i class="fas fa-chart-line"></i><h4>Energy Analytics</h4></div><div class="card" style="padding: 1rem;"><i class="fas fa-leaf"></i><h4>Green Cooling</h4></div><div class="card" style="padding: 1rem;"><i class="fas fa-cloud-upload-alt"></i><h4>IoT Ready</h4></div></div></div></section>
-  
+
   <section class="slider-section"><div class="container"><h2 class="section-title" data-aos="fade-up">Project Gallery <i class="fas fa-arrows-alt" style="font-size: 1.5rem;"></i></h2><div class="swiper mySwiper" data-aos="fade-up"><div class="swiper-wrapper" id="swiperWrapper"></div><div class="swiper-pagination"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>
   <div class="projects-gallery-link" data-aos="fade-up">
     <a href="projects.html" class="btn-gallery"><i class="fas fa-images"></i> Click to visit our projects →</a>
   </div>
   </div></section>
-  
+
   <section><div class="container"><h2 class="section-title" data-aos="fade-up">Core Expertise</h2><div class="grid"><div class="card" data-aos="zoom-in"><i class="fas fa-wind"></i><h3>Air Conditioning</h3><p>VRF, chillers, splits, central AC – precision cooling.</p></div><div class="card" data-aos="zoom-in"><i class="fas fa-thermometer-half"></i><h3>Cold Rooms</h3><p>Blast freezers & pharmaceutical storage (-35°C to +10°C).</p></div><div class="card" data-aos="zoom-in"><i class="fas fa-temperature-low"></i><h3>Heat Pumps</h3><p>High-efficiency air-to-water & geothermal systems.</p></div><div class="card" data-aos="zoom-in"><i class="fas fa-utensils"></i><h3>Kitchen Ventilation</h3><p>Grease extraction, make-up air, fire-rated systems.</p></div><div class="card" data-aos="zoom-in"><i class="fas fa-toilet"></i><h3>Toilet Exhaust</h3><p>Odor control & energy recovery ventilators.</p></div><div class="card" data-aos="zoom-in"><i class="fas fa-drafting-compass"></i><h3>Duct Fabrication</h3><p>Custom spiral/rectangular ducts, CFD optimized.</p></div></div></div></section>
-  
+
   <section><div class="container"><h2 class="section-title" data-aos="fade-up">Why Industry Leaders Trust HALU</h2><div class="stats" data-aos="fade-up"><div><div class="stat-number">5+</div><div class="stat-label">Years Experience</div></div><div><div class="stat-number">15+</div><div class="stat-label">Projects Delivered</div></div><div><div class="stat-number">24/7</div><div class="stat-label">Emergency Support</div></div><div><div class="stat-number">100%</div><div class="stat-label">Client Retention</div></div></div><div class="trust-projects-section" style="background: #fefaf5dd; border-radius: 56px; padding: 2rem; margin-top: 2rem;"><h3 style="color: #dc2626; margin-bottom: 1rem; font-size: 1.3rem; text-align: center;"><i class="fas fa-trophy"></i> Our Successful Projects</h3><div class="client-grid" id="clientsGrid"></div><div class="row-two-columns"><div class="col"><div class="project-list" data-aos="fade-right"><h3><i class="fas fa-building"></i> MESOB Projects</h3><ul><li><i class="fas fa-map-marker-alt"></i> Arada Subcity</li><li><i class="fas fa-map-marker-alt"></i> Kirkos Subcity</li><li><i class="fas fa-map-marker-alt"></i> Gulele Subcity</li><li><i class="fas fa-map-marker-alt"></i> Afar Region</li></ul></div></div><div class="col"><div class="project-list" data-aos="fade-left"><h3><i class="fas fa-trophy"></i> Key Government & Institutions</h3><ul><li><i class="fas fa-robot"></i> AI Project</li><li><i class="fas fa-city"></i> Civil Service</li><li><i class="fas fa-hard-hat"></i> Minaye Construction</li><li><i class="fas fa-charging-station"></i> TAPU Foods</li></ul></div></div></div><div class="click-hint"><i class="fas fa-mouse-pointer"></i> <strong>Click on any project logo or card → explore our HVAC services</strong></div></div></div></section>
-  
+
   <!-- PROJECTS IN PROGRESS - ATTRACTIVE SECTION -->
   <section><div class="container"><div class="progress-section" data-aos="fade-up"><h3><i class="fas fa-hard-hat"></i> Projects in Progress <i class="fas fa-spinner fa-spin" style="font-size: 1.2rem;"></i></h3><div class="progress-grid"><div class="progress-card" data-aos="zoom-in" data-aos-delay="0"><i class="fas fa-city"></i><h4>Gulele Mesob</h4><div class="progress-location"><i class="fas fa-map-marker-alt"></i> Gulele Subcity</div><div class="progress-badge"><i class="fas fa-tools"></i> Under Construction</div></div><div class="progress-card" data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-building"></i><h4>Adisketema Mesob</h4><div class="progress-location"><i class="fas fa-map-marker-alt"></i> Addis Ketema</div><div class="progress-badge"><i class="fas fa-tools"></i> Under Construction</div></div><div class="progress-card" data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-store"></i><h4>Lideta Mesob</h4><div class="progress-location"><i class="fas fa-map-marker-alt"></i> Lideta Subcity</div><div class="progress-badge"><i class="fas fa-tools"></i> Under Construction</div></div><div class="progress-card" data-aos="zoom-in" data-aos-delay="300"><i class="fas fa-warehouse"></i><h4>Semera Mesob</h4><div class="progress-location"><i class="fas fa-map-marker-alt"></i> Semera, Afar</div><div class="progress-badge"><i class="fas fa-tools"></i> Under Construction</div></div></div></div></div></section>
-
-  <section><div class="container"><div class="cta-section" data-aos="zoom-in"><h2>Ready to Upgrade Your Infrastructure?</h2><p style="margin-bottom: 1rem;">Get a free consultation from our engineering experts.</p><a href="contact.html" class="btn">Contact Us Today <i class="fas fa-arrow-right"></i></a></div></div></section>
+  <section><div class="container"><div class="cta-section" data-aos="zoom-in"><h2>Ready to Upgrade Your Infrastructure?</h2><p style="margin-bottom: 1rem;">Get a free consultation from our engineering experts.</p><div class="cta-buttons"><a href="contact.html" class="btn">Contact Us Today <i class="fas fa-arrow-right"></i></a><a href="#" class="btn btn-brochure js-brochure-download"><i class="fas fa-download"></i> Download Brochure</a></div></div></div></section>
 </main>
-
 <!-- Footer with HVAC.png image at bottom only -->
 <footer>
   <div class="footer-hvac-image">
@@ -1123,13 +1157,45 @@
     <p>© 2026 HALU Engineering — Precision HVAC & Mechanical Excellence | <i class="fas fa-fire"></i> Engineered to inspire</p>
   </div>
 </footer>
-
 <div class="floating-social"><a href="https://wa.me/251918036609" target="_blank" class="floating-icon floating-wa"><i class="fab fa-whatsapp"></i></a><a href="https://t.me/haluengineering" target="_blank" class="floating-icon floating-telegram"><i class="fab fa-telegram-plane"></i></a><a href="https://www.facebook.com/haluengineering" target="_blank" class="floating-icon floating-fb"><i class="fab fa-facebook-f"></i></a></div>
-
+<div class="brochure-toast" id="brochureToast"><i class="fas fa-check-circle" style="color:#22c55e;"></i> Your brochure download has started...</div>
 <script>
-  window.addEventListener('load', () => { 
-    const loader = document.getElementById('loader'); 
-    loader.classList.add('hide'); 
+  /* =====================================================================
+     BROCHURE SETTINGS – change ONLY this line.
+     1. Upload your brochure PDF to Google Drive (your Gmail account).
+     2. Right-click file → Share → "Anyone with the link" → Viewer → Copy link.
+     3. Link looks like: https://drive.google.com/file/d/1AbCdEfGhIjKlMnOp/view?usp=sharing
+        The ID is the part between /d/ and /view  (here: 1AbCdEfGhIjKlMnOp)
+     ===================================================================== */
+  const BROCHURE_DRIVE_FILE_ID = '1U52CDwKh2y1y1WXZaNViu00UcXp2T5PS';
+  const BROCHURE_DOWNLOAD_URL = `https://drive.google.com/uc?export=download&id=${BROCHURE_DRIVE_FILE_ID}`;
+
+  // Brochure download: triggers the file download directly from Google Drive
+  // without leaving the current page (uses a hidden iframe).
+  function downloadBrochure(e) {
+    if (e) e.preventDefault();
+    if (BROCHURE_DRIVE_FILE_ID.startsWith('PASTE_')) {
+      alert('Brochure link not set yet. Please add your Google Drive file ID in the script.');
+      return;
+    }
+    // Open the Drive download link in a new tab (Drive starts the download and closes the tab)
+    const link = document.createElement('a');
+    link.href = `https://drive.google.com/uc?export=download&confirm=t&id=${BROCHURE_DRIVE_FILE_ID}`;
+    link.target = '_blank';
+    link.rel = 'noopener';
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+
+    const toast = document.getElementById('brochureToast');
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3000);
+  }
+  document.querySelectorAll('.js-brochure-download').forEach(btn => btn.addEventListener('click', downloadBrochure));
+
+  window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    loader.classList.add('hide');
     setTimeout(() => loader.style.display = 'none', 500);
     const video = document.getElementById('haluEngineeringVideo');
     const fallbackDiv = document.getElementById('videoFallbackMsg');
@@ -1140,16 +1206,16 @@
     }
   });
   AOS.init({ duration: 800, once: true, offset: 60 });
-  const toggleBtn = document.getElementById('darkModeToggle'); 
-  toggleBtn.addEventListener('click', () => { 
-    document.body.classList.toggle('dark'); 
-    const icon = toggleBtn.querySelector('i'); 
-    const span = toggleBtn.querySelector('span'); 
-    if(document.body.classList.contains('dark')) { 
-      icon.classList.remove('fa-moon'); icon.classList.add('fa-sun'); span.innerText = ' Light'; 
-    } else { 
-      icon.classList.remove('fa-sun'); icon.classList.add('fa-moon'); span.innerText = ' Dark'; 
-    } 
+  const toggleBtn = document.getElementById('darkModeToggle');
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    const icon = toggleBtn.querySelector('i');
+    const span = toggleBtn.querySelector('span');
+    if(document.body.classList.contains('dark')) {
+      icon.classList.remove('fa-moon'); icon.classList.add('fa-sun'); span.innerText = ' Light';
+    } else {
+      icon.classList.remove('fa-sun'); icon.classList.add('fa-moon'); span.innerText = ' Dark';
+    }
   });
   const hamburger = document.getElementById('hamburger'), mobileMenu = document.getElementById('mobileMenu'), overlay = document.getElementById('overlay');
   function toggleMenu() { hamburger.classList.toggle('active'); mobileMenu.classList.toggle('active'); overlay.classList.toggle('active'); document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : ''; }
