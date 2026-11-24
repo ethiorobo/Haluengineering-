@@ -830,6 +830,119 @@
       color: #111;
     }
 
+    /* ===== PROJECTS IN PROGRESS - ATTRACTIVE CARD STYLE ===== */
+    .progress-section {
+      background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%);
+      border-radius: 48px;
+      padding: 2.5rem 2rem;
+      margin: 2rem 0;
+      border: 1px solid #fecaca;
+      box-shadow: 0 12px 28px -10px rgba(220,38,38,0.15);
+    }
+    body.dark .progress-section {
+      background: linear-gradient(135deg, #1a1f2e 0%, #111827 100%);
+      border-color: #374151;
+    }
+    .progress-section h3 {
+      text-align: center;
+      color: #dc2626;
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    .progress-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+    .progress-card {
+      background: white;
+      border-radius: 24px;
+      padding: 1.5rem 1.2rem;
+      text-align: center;
+      border: 1px solid #fee2e2;
+      transition: all 0.35s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.03);
+    }
+    body.dark .progress-card {
+      background: #1f2937;
+      border-color: #374151;
+    }
+    .progress-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #dc2626, #f87171, #dc2626);
+      background-size: 200% 100%;
+      animation: shimmer 2s infinite;
+    }
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+    .progress-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: #dc2626;
+      box-shadow: 0 24px 36px -12px rgba(220,38,38,0.25);
+    }
+    .progress-card i {
+      font-size: 2.2rem;
+      color: #dc2626;
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+    .progress-card h4 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 0.4rem;
+    }
+    body.dark .progress-card h4 {
+      color: #f3f4f6;
+    }
+    .progress-badge {
+      display: inline-block;
+      background: #fee2e2;
+      color: #b91c1c;
+      padding: 0.25rem 0.9rem;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      margin-top: 0.6rem;
+      border: 1px solid #fecaca;
+    }
+    body.dark .progress-badge {
+      background: #7f1d1d;
+      color: #fecaca;
+      border-color: #991b1b;
+    }
+    .progress-card .progress-location {
+      font-size: 0.8rem;
+      color: #6b7280;
+      margin-top: 0.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+    body.dark .progress-card .progress-location {
+      color: #9ca3af;
+    }
+    .progress-card .progress-location i {
+      font-size: 0.7rem;
+      margin: 0;
+      color: #dc2626;
+    }
+
     /* ===== ENHANCED MOBILE VIEW COMPATIBILITY - FIX FIT TO SIZE ===== */
     @media (max-width: 992px) {
       .container { padding: 0 20px; }
@@ -874,6 +987,12 @@
       .trust-projects-section { padding: 1.2rem !important; }
       .trust-projects-section h3 { font-size: 1.2rem !important; }
       .click-hint { font-size: 0.75rem; }
+      .progress-section { padding: 1.5rem 1rem; border-radius: 32px; }
+      .progress-section h3 { font-size: 1.2rem; }
+      .progress-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .progress-card { padding: 1rem 0.8rem; }
+      .progress-card h4 { font-size: 0.95rem; }
+      .progress-card i { font-size: 1.6rem; }
     }
     @media (max-width: 550px) {
       .container { padding: 0 14px; }
@@ -896,6 +1015,11 @@
       .client-card h4 { font-size: 0.9rem; }
       .projects-gallery-link .btn-gallery { padding: 5px 14px; font-size: 0.7rem; }
       .cta-section p { font-size: 0.8rem; margin-bottom: 1rem !important; }
+      .progress-grid { grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+      .progress-card { padding: 0.8rem 0.5rem; }
+      .progress-card h4 { font-size: 0.8rem; }
+      .progress-badge { font-size: 0.6rem; padding: 0.2rem 0.6rem; }
+      .progress-card .progress-location { font-size: 0.65rem; }
     }
     @media (max-width: 380px) {
       .hero h1 { font-size: 1.3rem; }
@@ -905,6 +1029,7 @@
       section { padding: 2rem 0; }
       .card h3 { font-size: 1rem; }
       .card p { font-size: 0.75rem; }
+      .progress-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -983,6 +1108,9 @@
   
   <section><div class="container"><h2 class="section-title" data-aos="fade-up">Why Industry Leaders Trust HALU</h2><div class="stats" data-aos="fade-up"><div><div class="stat-number">5+</div><div class="stat-label">Years Experience</div></div><div><div class="stat-number">15+</div><div class="stat-label">Projects Delivered</div></div><div><div class="stat-number">24/7</div><div class="stat-label">Emergency Support</div></div><div><div class="stat-number">100%</div><div class="stat-label">Client Retention</div></div></div><div class="trust-projects-section" style="background: #fefaf5dd; border-radius: 56px; padding: 2rem; margin-top: 2rem;"><h3 style="color: #dc2626; margin-bottom: 1rem; font-size: 1.3rem; text-align: center;"><i class="fas fa-trophy"></i> Our Successful Projects</h3><div class="client-grid" id="clientsGrid"></div><div class="row-two-columns"><div class="col"><div class="project-list" data-aos="fade-right"><h3><i class="fas fa-building"></i> MESOB Projects</h3><ul><li><i class="fas fa-map-marker-alt"></i> Arada Subcity</li><li><i class="fas fa-map-marker-alt"></i> Kirkos Subcity</li><li><i class="fas fa-map-marker-alt"></i> Gulele Subcity</li><li><i class="fas fa-map-marker-alt"></i> Afar Region</li></ul></div></div><div class="col"><div class="project-list" data-aos="fade-left"><h3><i class="fas fa-trophy"></i> Key Government & Institutions</h3><ul><li><i class="fas fa-university"></i> INSA</li><li><i class="fas fa-city"></i> Civil Service</li><li><i class="fas fa-hard-hat"></i> Minaye Construction</li><li><i class="fas fa-charging-station"></i> TAPU Foods</li></ul></div></div></div><div class="click-hint"><i class="fas fa-mouse-pointer"></i> <strong>Click on any project logo or card → explore our HVAC services</strong></div></div></div></section>
   
+  <!-- PROJECTS IN PROGRESS - ATTRACTIVE SECTION -->
+  <section><div class="container"><div class="progress-section" data-aos="fade-up"><h3><i class="fas fa-hard-hat"></i> Projects in Progress <i class="fas fa-spinner fa-spin" style="font-size: 1.2rem;"></i></h3><div class="progress-grid"><div class="progress-card" data-aos="zoom-in" data-aos-delay="0"><i class="fas fa-city"></i><h4>Gulele Mesob</h4><div class="progress-location"><i class="fas fa-map-marker-alt"></i> Gulele Subcity</div><div class="progress-badge"><i class="fas fa-tools"></i> Under Construction</div></div><div class="progress-card" data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-building"></i><h4>Adisketema Mesob</h4><div class="progress-location"><i class="fas fa-map-marker-alt"></i> Addis Ketema</div><div class="progress-badge"><i class="fas fa-tools"></i> Under Construction</div></div><div class="progress-card" data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-store"></i><h4>Lideta Mesob</h4><div class="progress-location"><i class="fas fa-map-marker-alt"></i> Lideta Subcity</div><div class="progress-badge"><i class="fas fa-tools"></i> Under Construction</div></div><div class="progress-card" data-aos="zoom-in" data-aos-delay="300"><i class="fas fa-warehouse"></i><h4>Semera Mesob</h4><div class="progress-location"><i class="fas fa-map-marker-alt"></i> Semera, Afar</div><div class="progress-badge"><i class="fas fa-tools"></i> Under Construction</div></div></div></div></div></section>
+
   <section><div class="container"><div class="cta-section" data-aos="zoom-in"><h2>Ready to Upgrade Your Infrastructure?</h2><p style="margin-bottom: 1rem;">Get a free consultation from our engineering experts.</p><a href="contact.html" class="btn">Contact Us Today <i class="fas fa-arrow-right"></i></a></div></div></section>
 </main>
 
@@ -1029,9 +1157,11 @@
   const logoContainer = document.getElementById('logoContainer');
   function tryLoadLogo(url) { const img = new Image(); img.onload = function() { const logoImg = document.createElement('img'); logoImg.src = url; logoImg.alt = 'HALU Engineering'; logoImg.className = 'logo-img'; logoContainer.innerHTML = ''; logoContainer.appendChild(logoImg); }; img.onerror = function() { const fallbackDiv = document.createElement('div'); fallbackDiv.style.cssText = 'width:55px;height:55px;background:linear-gradient(145deg,#dc2626,#b91c1c);border-radius:16px;display:flex;align-items:center;justify-content:center;color:white;font-size:1.6rem;font-weight:800;'; fallbackDiv.innerHTML = '<i class="fas fa-wind"></i>'; logoContainer.innerHTML = ''; logoContainer.appendChild(fallbackDiv); }; img.src = url; } tryLoadLogo('80.JPG');
   const swiper = new Swiper('.mySwiper', { slidesPerView: 1, spaceBetween: 20, loop: true, autoplay: { delay: 4000, disableOnInteraction: false }, pagination: { el: '.swiper-pagination', clickable: true }, navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }, breakpoints: { 640: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }, speed: 800 });
-  const imageList = [{ src: "1.jpg", name: "VRF System Install" },{ src: "2.jpg", name: "Chiller Plant" },{ src: "28.jpg", name: "Cold Storage" },{ src: "13.jpg", name: "Heat Pump Array" },{ src: "17.jpg", name: "Duct Fabrication" },{ src: "33.jpg", name: "Industrial AHU" },{ src: "34.jpg", name: "Precision Cooling" },{ src: "35.jpg", name: "Ventilation Duct" },{ src: "37.jpg", name: "Smart Controls" }];
+  // Removed the Cold Storage image ("28.jpg") from the gallery list
+  const imageList = [{ src: "1.jpg", name: "VRF System Install" },{ src: "2.jpg", name: "Chiller Plant" },{ src: "13.jpg", name: "Heat Pump Array" },{ src: "17.jpg", name: "Duct Fabrication" },{ src: "33.jpg", name: "Industrial AHU" },{ src: "34.jpg", name: "Precision Cooling" },{ src: "35.jpg", name: "Ventilation Duct" },{ src: "37.jpg", name: "Smart Controls" }];
   const swiperWrapper = document.querySelector('#swiperWrapper'); if(swiperWrapper){ imageList.forEach(img => { const slide = document.createElement('div'); slide.className = 'swiper-slide'; slide.innerHTML = `<img src="${img.src}" alt="${img.name}" onerror="this.src='https://placehold.co/600x400/dc2626/ffffff?text=${img.name.replace(/ /g,'+')}'"><div class="slide-caption"><i class="fas fa-expand-arrows-alt"></i> ${img.name}</div>`; swiperWrapper.appendChild(slide); }); swiper.update(); }
-  const clients = [{ name: "DHL", icon: "fas fa-truck-fast" },{ name: "BOEING", icon: "fas fa-plane" },{ name: "INSA", icon: "fas fa-shield-alt" },{ name: "Civil Service", icon: "fas fa-users" },{ name: "Minaye Construction", icon: "fas fa-hard-hat" },{ name: "TAPU Foods", icon: "fas fa-apple-alt" }];
+  // Removed the INSA entry from the clients array
+  const clients = [{ name: "DHL", icon: "fas fa-truck-fast" },{ name: "BOEING", icon: "fas fa-plane" },{ name: "Civil Service", icon: "fas fa-users" },{ name: "Minaye Construction", icon: "fas fa-hard-hat" },{ name: "TAPU Foods", icon: "fas fa-apple-alt" }];
   const clientsGrid = document.getElementById('clientsGrid'); if(clientsGrid){ clients.forEach(client => { const card = document.createElement('div'); card.className = 'client-card'; card.innerHTML = `<div class="client-icon"><i class="${client.icon}"></i></div><h4>${client.name}</h4><div class="project-badge"><i class="fas fa-arrow-right"></i> View solutions</div>`; card.addEventListener('click', () => window.location.href = 'services.html'); clientsGrid.appendChild(card); }); }
   document.querySelectorAll('.project-list').forEach(el => { el.style.cursor = 'pointer'; el.addEventListener('click', () => window.location.href = 'services.html'); });
   const canvas = document.getElementById('hvacCanvas'); const ctx = canvas.getContext('2d'); let particles = []; function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; } window.addEventListener('resize', resizeCanvas); resizeCanvas(); for(let i=0;i<70;i++){ particles.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, radius: Math.random() * 4 + 1, speedX: (Math.random() - 0.5) * 0.6, speedY: Math.random() * 1.2 + 0.2, opacity: Math.random() * 0.4 + 0.1, color: `rgba(220,38,38,${Math.random() * 0.3 + 0.1})` }); } function animateBg() { if(!ctx) return; ctx.clearRect(0,0,canvas.width,canvas.height); for(let p of particles){ p.x += p.speedX; p.y += p.speedY; if(p.x < -20) p.x = canvas.width+20; if(p.x > canvas.width+20) p.x = -20; if(p.y > canvas.height+30) p.y = -30; if(p.y < -30) p.y = canvas.height+30; ctx.beginPath(); ctx.arc(p.x, p.y, p.radius, 0, Math.PI*2); ctx.fillStyle = p.color; ctx.fill(); } requestAnimationFrame(animateBg); } animateBg();
